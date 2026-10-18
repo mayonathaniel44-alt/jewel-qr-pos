@@ -1,10 +1,3 @@
-
-PORT=5000
-NODE_ENV=development
-DATABASE_URL=postgresql://YOUR_DB_USER:YOUR_DB_PASSWORD@localhost:5432/jewel_qr_pos
-JWT_SECRET=replace_with_a_long_random_secret
-FRONTEND_URL=http://localhost:5173
-
 const express = require("express");
 const cors = require("cors");
 const helmet = require("helmet");
@@ -27,5 +20,17 @@ app.get("/api/health", (req, res) => {
     message: "Jewel QR POS API is running",
   });
 });
+
+// API routes
+app.use("/api/menu", require("./modules/menu/menu.routes"));
+app.use("/api/auth", require("./modules/auth/auth.routes"));
+app.use("/api/orders", require("./modules/orders/orders.routes"));
+app.use("/api/payments", require("./modules/payments/payments.routes"));
+app.use("/api/qr", require("./modules/qr/qr.routes"));
+app.use("/api/tables", require("./modules/tables/tables.routes"));
+app.use("/api/users", require("./modules/users/users.routes"));
+
+// Centralized error handler
+app.use(require("./middleware/errorHandler"));
 
 module.exports = app;
