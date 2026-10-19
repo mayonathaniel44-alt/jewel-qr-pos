@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+*{box-sizing:border-box}html,body,#root{margin:0;min-height:100%;font-family:'Poppins',sans-serif}
+/* Jewel customer ordering screens - separated page components */
+.jewel-customer-shell{width:100%;min-height:100vh;display:flex;justify-content:center;align-items:flex-start;padding:22px 12px;background:#202020}
+.jc-screen{position:relative;width:100%;max-width:390px;min-height:760px;overflow:hidden;background:#fff0fc;padding:22px;box-shadow:0 8px 30px #0003;color:#171017}
+.jc-screen button{font-family:inherit;cursor:pointer}
+.jc-primary{display:block;margin:0 auto;background:#e90078;color:#fff;border:0;border-radius:7px;padding:12px 24px;min-width:150px;font-size:12px;font-weight:600}
+.jc-primary:disabled{opacity:.45;cursor:not-allowed}
+.jc-text-button{display:block;margin:12px auto 0;background:transparent;border:0;color:#e90078;font-size:11px}
+.jc-back{position:relative;z-index:3;border:0;background:transparent;color:#171017;font-size:25px;line-height:1;padding:0 4px}
+.jc-welcome{display:flex;flex-direction:column;align-items:center;padding-top:0;text-align:center}
+.jc-welcome-art{position:relative;width:calc(100% + 44px);height:260px;margin:0 -22px;display:flex;align-items:center;justify-content:center;background:#ffb4e9;border-radius:0 0 0 48%}
+.jc-welcome-art:before{content:"";position:absolute;left:0;top:0;width:35%;height:100%;background:#fff0fc;border-radius:0 45% 55% 0}
+.jc-welcome-art img{position:relative;z-index:1;width:185px;height:125px;object-fit:contain}
+.jc-welcome-copy{margin-top:50px}
+.jc-welcome-copy h1{font-size:27px;margin:0;font-weight:600}
+.jc-welcome-copy p{font-size:14px;margin:3px 0 8px}
+.jc-table-name{font-size:27px;color:#e90078;margin-top:8px}
+.jc-welcome-menu{display:flex;flex-direction:column;align-items:center;margin-top:32px}
+.jc-small-logo{width:90px;height:40px;object-fit:contain}
+.jc-welcome-menu>b{font-size:7px;color:#e90078;margin-top:4px}
+.jc-food-preview{display:grid;grid-template-columns:repeat(2,64px);gap:8px 16px;margin-top:20px}
+.jc-food-preview img{width:64px;height:39px;object-fit:cover;background:white;border-radius:50%;border:1px solid #f5b1d6}
+.jc-pill-button{border:0;border-radius:30px;background:#ff8bc9;padding:10px 20px;margin-top:24px;font-size:13px;font-weight:600}
+.jc-menu{padding:24px 18px 28px}
+.jc-menu-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:30px}
+.jc-menu-header>img{width:125px;height:58px;object-fit:contain;object-position:left center}
+.jc-cart-icon{position:relative;border:0;background:transparent;font-size:20px;padding:4px}
+.jc-cart-icon i{position:absolute;top:-5px;right:-6px;width:17px;height:17px;border-radius:50%;background:#e90078;color:white;font-size:10px;font-style:normal;display:grid;place-items:center}
+.jc-search{height:40px;display:flex;align-items:center;gap:10px;padding:0 12px;border-radius:22px;background:#f7dff3;margin-bottom:22px}
+.jc-search input{flex:1;min-width:0;border:0;outline:0;background:transparent;font-size:12px}
+.jc-search span{font-size:14px;color:#555}
+.jc-categories{display:flex;gap:7px;overflow-x:auto;padding-bottom:8px;border-bottom:1px solid #555;scrollbar-width:none}
+.jc-categories::-webkit-scrollbar{display:none}
+.jc-categories button{flex:0 0 auto;border:0;border-radius:15px;padding:5px 10px;background:#ffb5df;font-size:10px;font-weight:600;white-space:nowrap}
+.jc-categories button.active{background:#e90078;color:white}
+.jc-section-heading{font-size:12px;font-weight:600;margin:18px 0 12px}
+.jc-product-list{display:flex;flex-direction:column;gap:10px}
+.jc-product-card{width:100%;min-height:105px;display:flex;align-items:center;gap:10px;text-align:left;padding:9px;border:0;border-radius:9px;background:#ff8bc9;color:#171017}
+.jc-product-card>img{width:94px;height:80px;flex:0 0 94px;object-fit:cover;border-radius:8px;background:#fff0df}
+.jc-product-copy{display:flex;flex-direction:column;align-items:flex-start;gap:4px;min-width:0;flex:1}
+.jc-product-copy b{font-size:10px;line-height:1.4;text-transform:uppercase}
+.jc-product-copy small{font-size:8px}
+.jc-product-copy strong{font-size:10px;color:#171017;align-self:flex-end;margin-top:-14px}
+.jc-product-copy em{font-style:normal;font-size:9px;background:#e90078;color:white;border-radius:12px;padding:4px 8px}
+.jc-bottom-cart{display:block;margin:14px auto 0;border:0;border-radius:8px;background:#e90078;color:white;padding:11px 18px}
+.jc-product{padding:18px 24px 24px}
+.jc-product-hero{position:relative;height:265px;margin:-8px -24px 0;display:grid;place-items:center}
+.jc-product-hero:before{content:"";position:absolute;inset:10px 0 0;background:#e90078;clip-path:ellipse(57% 40% at 49% 48%);transform:rotate(-13deg)}
+.jc-product-hero img{position:relative;z-index:1;width:230px;height:210px;object-fit:cover;border-radius:50%;background:#f7f0e8;border:5px solid #eee5dd}
+.jc-product-details{position:relative;z-index:1}
+.jc-title-price{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.jc-title-price h2{font-size:16px;text-transform:uppercase;line-height:1.5;margin:0;max-width:65%}
+.jc-title-price strong{color:#e90078;font-size:15px;white-space:nowrap}
+.jc-description{font-size:12px;font-style:italic;margin:8px 0 14px}
+.jc-product-details h4{font-size:11px;margin:12px 0 6px}
+.jc-addon{display:flex;align-items:center;gap:8px;font-size:11px;margin:4px 0}
+.jc-addon input{accent-color:#e90078}
+.jc-qty{display:inline-flex;align-items:center;gap:15px;background:#ff91ca;border-radius:18px;padding:4px 9px}
+.jc-qty button{border:0;background:transparent;font-size:17px}
+.jc-qty b{font-size:12px}
+.jc-note{width:100%;border:1px solid #a98b9f;background:white;border-radius:16px;padding:7px 12px;font-size:11px}
+.jc-add-button{margin-top:24px}
+.jc-cart{padding:20px 24px 28px}
+.jc-simple-header{display:flex;align-items:center;justify-content:space-between;min-height:35px}
+.jc-simple-header img{width:75px;max-height:38px;object-fit:contain}
+.jc-center-title{text-align:center;font-size:15px;margin:8px 0 0}
+.jc-center-table{text-align:center;color:#e90078;font-size:14px;margin:0 0 26px}
+.jc-cart-list{display:flex;flex-direction:column;gap:12px}
+.jc-cart-item{display:flex;align-items:center;gap:10px;background:#ff8bc9;border-radius:10px;min-height:84px;padding:9px}
+.jc-cart-item>img{flex:0 0 64px;width:64px;height:56px;object-fit:cover;border-radius:50%;background:#fff}
+.jc-cart-info{display:flex;flex-direction:column;gap:4px;flex:1;min-width:0}
+.jc-cart-info b{font-size:10px;text-transform:uppercase;line-height:1.4}
+.jc-cart-info>span{font-size:10px}
+.jc-qty-small{display:flex;align-items:center;gap:10px;font-size:10px}
+.jc-qty-small button{border:0;background:transparent;font-size:14px;padding:0}
+.jc-remove{align-self:flex-start;background:transparent;border:0;font-size:17px}
+.jc-totals{margin-top:22px;font-size:11px}
+.jc-totals>div{display:flex;justify-content:space-between;margin:6px 0}
+.jc-total{border-top:1px solid #e90078;padding-top:8px;font-size:13px}
+.jc-place-order{margin-top:28px}
+.jc-empty{text-align:center;font-size:12px;padding:20px 0;color:#765e70}
+.jc-complete{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:28px}
+.jc-success{width:126px;height:126px;display:grid;place-items:center;color:white;background:#c90062;border:4px solid #ff8bc9;outline:1px solid #c90062;border-radius:50%;margin-bottom:28px;font-size:50px}
+.jc-complete h2{font-size:17px;font-weight:500;margin:0 0 8px}
+.jc-complete>p{font-size:12px;line-height:1.5;margin:0 0 18px}
+.jc-ticket{width:100%;max-width:260px;display:flex;flex-direction:column;align-items:center;border:1px solid #5d505a;border-radius:12px;padding:18px 10px;background:#fff;gap:5px;margin-bottom:28px}
+.jc-ticket b{font-size:13px}.jc-ticket strong{color:#e90078;font-size:15px;font-weight:500;margin:3px 0 10px}.jc-ticket small{font-size:9px}
+.jc-track{padding:20px 24px}
+.jc-track>h2{text-align:center;margin:0;font-size:18px}
+.jc-track>.jc-center-table{margin-bottom:42px}
+.jc-track-list{margin-left:18px}
+.jc-track-step{position:relative;display:flex;align-items:flex-start;gap:16px;min-height:62px;color:#171017}
+.jc-track-step:not(:last-child):before{content:"";position:absolute;left:10px;top:20px;height:42px;width:2px;background:#c8b5c3}
+.jc-track-step>span{z-index:1;width:21px;height:21px;border-radius:50%;display:grid;place-items:center;background:#d7cbd4;color:white;font-size:12px}
+.jc-track-step.done>span{background:#e90078}
+.jc-track-step div{display:flex;flex-direction:column;gap:3px;padding-top:2px}
+.jc-track-step b{font-size:10px;font-weight:500}.jc-track-step small{font-size:8px;color:#8e7c89}
+.jc-track-button{margin-top:12px}
+.jc-running-button{position:absolute;bottom:100px;left:50%;transform:translateX(-50%);white-space:nowrap}
+.jc-running{padding:20px 24px}
+.jc-running>h2{text-align:center;font-size:18px;margin:18px 0 0}
+.jc-running .jc-center-table{margin-bottom:22px}
+.jc-running-list{display:flex;flex-direction:column}
+.jc-running-row{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid #f347a0;padding:13px 4px;font-size:12px}
+.jc-running-row span:last-child{white-space:nowrap}
+.jc-running-total{display:flex;justify-content:space-between;margin:42px 4px 0;font-size:13px}
+.jc-bill-button{margin-top:52px}
+.jc-running:after{content:"";position:absolute;right:-95px;top:-10px;width:120px;height:250px;border-radius:0 0 0 80%;background:#e90078;pointer-events:none}
+@media(max-width:430px){.jewel-customer-shell{padding:0;background:#fff0fc}.jc-screen{min-height:100dvh;max-width:none;box-shadow:none}}
+
+
+/* Retractable sidebar - customer frontend only */
+.jc-sidebar-toggle{position:fixed;left:max(12px,calc(50% - 220px));top:34px;z-index:60;width:38px;height:38px;display:grid;place-items:center;color:#e90078;background:#fff0fc;border:1px solid #f3c6e1;border-radius:10px;box-shadow:0 3px 12px #4b18301a}
+.jc-sidebar-backdrop{position:fixed;inset:0;z-index:80;border:0;padding:0;background:rgba(18,10,17,.48);cursor:pointer}
+.jc-sidebar{position:fixed;z-index:90;left:0;top:0;bottom:0;width:285px;max-width:84vw;padding:24px 16px 18px;display:flex;flex-direction:column;overflow-y:auto;background:linear-gradient(165deg,#241522 0%,#171017 100%);color:#fff;box-shadow:8px 0 30px #0003;transform:translateX(-105%);visibility:hidden;transition:transform .25s ease,visibility .25s ease}
+.jc-sidebar.is-open{transform:translateX(0);visibility:visible}
+.jc-sidebar-brand{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:82px;padding:0 4px 18px}
+.jc-sidebar-brand img{width:174px;max-width:calc(100% - 38px);height:66px;object-fit:contain;object-position:left center}
+.jc-sidebar-brand>button{display:grid;place-items:center;width:34px;height:34px;border:0;border-radius:8px;background:#ffffff12;color:#fff}
+.jc-sidebar-label{margin:20px 8px 12px;color:#bcaeba;font-size:11px;font-weight:700;letter-spacing:1.5px}
+.jc-sidebar-nav{display:flex;flex-direction:column;gap:7px}
+.jc-sidebar-link{position:relative;width:100%;min-height:50px;display:flex;align-items:center;gap:13px;padding:0 12px;border:0;border-radius:12px;background:transparent;color:#eee2ed;text-align:left;font-size:13px;font-weight:500}
+.jc-sidebar-link>span{flex:1}
+.jc-sidebar-link.active{background:linear-gradient(100deg,#f21b8a,#c90068);color:white;box-shadow:0 5px 15px #e900782b}
+.jc-sidebar-link.active:before{content:"";position:absolute;left:0;top:10px;bottom:10px;width:3px;border-radius:0 4px 4px 0;background:#fff}
+.jc-sidebar-chevron{opacity:.65}
+.jc-sidebar-count{font-style:normal;font-size:10px;font-weight:700;background:#fff;color:#d4006b;border-radius:20px;padding:2px 6px}
+.jc-sidebar-footer{margin-top:auto;padding:30px 8px 4px;display:flex;flex-direction:column;gap:5px;color:#ff79bd}
+.jc-sidebar-footer span{font-size:11px;font-weight:600}
+.jc-sidebar-footer small{font-family:Georgia,serif;font-style:italic;font-size:17px}
+@media(max-width:430px){.jc-sidebar-toggle{left:12px;top:12px}}
+@media(prefers-reduced-motion:reduce){.jc-sidebar{transition:none}}
